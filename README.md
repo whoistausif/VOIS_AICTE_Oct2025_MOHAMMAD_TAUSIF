@@ -39,11 +39,8 @@ The dataset, `Airbnb_Open_Data.csv`, is loaded into a pandas DataFrame. We then 
 #### **Code**
 
 ```python
-# Load the CSV file into a pandas DataFrame
 df = pd.read_csv('1730285881-Airbnb_Open_Data (1).xlsx - in.csv', low_memory=False)
 print("Dataset loaded successfully!")
-
-# Display the first 5 rows of the DataFrame
 print("First 5 rows of the dataset:")
 display(df.head())
 ```
@@ -59,18 +56,14 @@ This crucial step ensures the quality of our analysis. We handle missing values 
 #### **Code**
 
 ```python
-# Handle Missing Values
 df['reviews per month'].fillna(0, inplace=True)
 df['review rate number'].fillna(0, inplace=True)
 df.drop(['license', 'country', 'country code'], axis=1, inplace=True)
 
-# Correct Data Types
 df['price'] = df['price'].replace({'\$': ''}, regex=True).astype(float)
 df['service fee'] = df['service fee'].replace({'\$': ''}, regex=True).astype(float)
 
-# Handle Duplicates
 df.drop_duplicates(inplace=True)
-
 print("Data cleaning and preprocessing complete.")
 ```
 
@@ -85,7 +78,6 @@ To understand the geographical distribution of listings, we create a count plot 
 #### **Code**
 
 ```python
-# Bar chart of listings per neighbourhood group
 plt.figure(figsize=(10, 6))
 sns.countplot(y='neighbourhood group', data=df, order = df['neighbourhood group'].value_counts().index, palette='plasma')
 plt.title('Number of Listings by Neighbourhood Group')
@@ -95,7 +87,7 @@ plt.show()
 ```
 
 #### **Visualization**
-
+![Analysis of Listings by Borough](https://github.com/whoistausif/VOIS_AICTE_Oct2025_MOHAMMAD_TAUSIF/blob/main/Analysis%20of%20Listings%20by%20Borough.png)
 -----
 
 ### **5. Analysis of Room Type Distribution**
