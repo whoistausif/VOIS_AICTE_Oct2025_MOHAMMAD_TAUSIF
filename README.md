@@ -99,7 +99,6 @@ A pie chart is used to show the proportion of different room types available on 
 #### **Code**
 
 ```python
-# Pie chart of room types
 plt.figure(figsize=(8, 8))
 df['room type'].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, colors=sns.color_palette('pastel'))
 plt.title('Distribution of Room Types')
@@ -108,7 +107,7 @@ plt.show()
 ```
 
 #### **Visualization**
-
+![Analysis of Room Type Distribution](https://github.com/whoistausif/VOIS_AICTE_Oct2025_MOHAMMAD_TAUSIF/blob/main/Analysis%20of%20Room%20Type%20Distribution.png)
 -----
 
 ### **6. Price Distribution Analysis**
@@ -120,7 +119,6 @@ We plot a histogram to visualize the distribution of listing prices. To make the
 #### **Code**
 
 ```python
-# Histogram of prices, filtered for better visualization
 plt.figure(figsize=(10, 6))
 sns.histplot(df[df['price'] < 500]['price'], bins=50, kde=True)
 plt.title('Price Distribution for Listings under $500')
@@ -130,7 +128,7 @@ plt.show()
 ```
 
 #### **Visualization**
-
+![Price Distribution Analysis](https://github.com/whoistausif/VOIS_AICTE_Oct2025_MOHAMMAD_TAUSIF/blob/main/Price%20Distribution%20Analysis.png)
 -----
 
 ### **7. Correlation Analysis of Features**
@@ -142,11 +140,10 @@ A correlation heatmap is a powerful tool to visualize the relationships between 
 #### **Code**
 
 ```python
-# Select numerical columns and calculate the correlation matrix
+
 numerical_cols = ['price', 'service fee', 'minimum nights', 'number of reviews', 'review rate number', 'availability 365']
 corr_matrix = df[numerical_cols].corr()
 
-# Plot the heatmap
 plt.figure(figsize=(12, 9))
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Correlation Matrix of Numerical Features')
@@ -154,7 +151,7 @@ plt.show()
 ```
 
 #### **Visualization**
-
+![Correlation Analysis of Features](https://github.com/whoistausif/VOIS_AICTE_Oct2025_MOHAMMAD_TAUSIF/blob/main/Correlation%20Analysis%20of%20Features.png)
 -----
 
 ### **8. Analysis of Most Expensive Neighborhoods**
@@ -166,7 +163,7 @@ To identify the most premium locations, we calculate the average price per neigh
 #### **Code**
 
 ```python
-# Calculate and plot the average price for the top 20 most expensive neighborhoods
+
 avg_price_by_neighborhood = df.groupby('neighbourhood')['price'].mean().sort_values(ascending=False).head(20)
 
 plt.figure(figsize=(12, 8))
@@ -178,3 +175,4 @@ plt.show()
 ```
 
 #### **Visualization**
+![Analysis of Most Expensive Neighborhoods](https://github.com/whoistausif/VOIS_AICTE_Oct2025_MOHAMMAD_TAUSIF/blob/main/Analysis%20of%20Most%20Expensive%20Neighborhoods.png)
