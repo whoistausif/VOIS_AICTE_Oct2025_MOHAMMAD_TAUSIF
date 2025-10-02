@@ -1,8 +1,9 @@
 
 
-## **Project Report: Detailed Analysis of the NYC Airbnb Market**
+## **Project Report: Detailed Analysis of the Airbnb Hotel Booking **
 
 **Author:** Mohmmad Tausif  
+
 **Internship ID:** INTERNSHIP\_17546440516895be537820f
 
 -----
