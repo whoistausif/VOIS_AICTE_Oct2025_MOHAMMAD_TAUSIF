@@ -1,6 +1,6 @@
 
 
-## **Project Report: Detailed Analysis of the Airbnb Hotel Booking **
+## **Project Report: Detailed Analysis of the Airbnb Hotel Booking**
 
 **Author:** Mohmmad Tausif  
 
